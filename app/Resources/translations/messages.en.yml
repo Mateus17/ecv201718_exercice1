@@ -1,0 +1,46 @@
+empty:
+  pays: There is no country
+  discipline: There is no sport
+  athlete: There is no athlete
+
+save: Add
+edit: Edit
+
+pays:
+  title: Countries
+  list: Country list
+  edit: Country edition
+  add: Create a country
+  added: Country created
+  edited: Country edited
+  nom: Name
+  drapeau: Flag
+  unknown: Country unknown
+  deleted: Country deleted
+
+discipline:
+  title: Sports
+  list: Sports list
+  edit: Sport edition
+  add: Create a sport
+  added: Sport created
+  edited: Sport edited
+  nom: Name
+  unknown: Sport unknown
+  deleted: Sport deleted
+
+athlete:
+  title: Athlete
+  list: Athlete list
+  edit: Athlete edition
+  add: Create an athlete
+  added: Athlete added
+  edited: Athlete edited
+  nom: Last name
+  prenom: First name
+  photo: Picture
+  birthday: Birthday
+  pays: Country
+  discipline: Sport
+  unknown: Athlete unknown
+  deleted: Athlete deleted

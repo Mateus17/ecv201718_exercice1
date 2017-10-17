@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block pageDiscipline %}active{% endblock %}
+
+{% block body %}
+  <h1>{{ 'discipline.list'|trans }}</h1>
+
+  {% if disciplines is empty %}
+    <p class="alert alert-danger">{{ 'empty.discipline'|trans }}</p>
+  {% else %}
+    <table class="table table-striped">
+      <thead>
+        <th>{{ 'discipline.nom'|trans }}</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        {% for discipline in disciplines %}
+          <tr>
+            <td>{{discipline.nom}}</td>
+            <td>
+              <a href="{{ path('discipline_edit', {'id': discipline.id}) }}"><i class="material-icons">mode_edit</i></a>
+            </td>
+            <td>
+              <a href="{{ path('discipline_delete', {'id': discipline.id}) }}"><i class="material-icons text-danger">delete</i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+  <h2>{{ 'discipline.add'|trans }}</h2>
+  {{form_start(form)}}
+  {{form_end(form)}}
+
+{% endblock %}

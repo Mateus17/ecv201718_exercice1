@@ -1,0 +1,46 @@
+empty:
+  pays: Il n'y a aucun pays
+  discipline: Il n'y a aucune discipline
+  athlete: Il n'y a aucun athlète
+
+save: Ajouter
+edit: Modifier
+
+pays:
+  title: Pays
+  list: Liste des pays
+  edit: Modification d'un pays
+  add: Ajouter un pays
+  added: Pays ajouté
+  edited: Pays modifié
+  nom: Nom
+  drapeau: Drapeau
+  unknown: Pays introuvable
+  deleted: Pays supprimé
+
+discipline:
+  title: Disciplines
+  list: Liste des disciplines
+  edit: Modification d'une discipline
+  add: Ajouter une discipline
+  added: Discipline ajoutée
+  edited: Discipline modifiée
+  nom: Nom
+  unknown: Discipline introuvable
+  deleted: Discipline supprimée
+
+athlete:
+  title: Athlètes
+  list: Liste des athlètes
+  edit: Modification d'un athlète
+  add: Ajouter un athlète
+  added: Athlète ajouté
+  edited: Athlète modifié
+  nom: Nom
+  prenom: Prénom
+  photo: Photo
+  birthday: Date de naissance
+  pays: Pays
+  discipline: Discipline
+  unknown: Athlète introuvable
+  deleted: Athlète supprimé

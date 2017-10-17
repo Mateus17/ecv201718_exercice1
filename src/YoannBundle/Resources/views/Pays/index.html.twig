@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block pagePays %}active{% endblock %}
+
+{% block body %}
+  <h1>{{ 'pays.list'|trans }}</h1>
+
+  {% if pays is empty %}
+    <p class="alert alert-danger">{{ 'empty.pays'|trans }}</p>
+  {% else %}
+    <table class="table table-striped">
+      <thead>
+        <th>{{ 'pays.nom'|trans }}</th>
+        <th>{{ 'pays.drapeau'|trans }}</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        {% for un_pays in pays %}
+          <tr>
+            <td>{{un_pays.nom}}</td>
+            <td><img src="{{ asset('/uploads/drapeaux/'~un_pays.drapeau) }}" alt="" class="img-thumbnail"></td>
+            <td>
+              <a href="{{ path('pays_edit', {'id': un_pays.id}) }}"><i class="material-icons">mode_edit</i></a>
+            </td>
+            <td>
+              <a href="{{ path('pays_delete', {'id': un_pays.id}) }}"><i class="material-icons text-danger">delete</i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+  <h2>{{ 'pays.add'|trans }}</h2>
+  {{form_start(form)}}
+  {{form_end(form)}}
+
+{% endblock %}

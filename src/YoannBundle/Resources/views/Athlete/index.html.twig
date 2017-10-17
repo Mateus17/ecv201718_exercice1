@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block pageAthlete %}active{% endblock %}
+
+{% block body %}
+  <h1>{{ 'athlete.list'|trans }}</h1>
+
+  {% if athletes is empty %}
+    <p class="alert alert-danger">{{ 'empty.athlete'|trans }}</p>
+  {% else %}
+    <table class="table table-striped">
+      <thead>
+        <th>{{ 'athlete.nom'|trans }}</th>
+        <th>{{ 'athlete.prenom'|trans }}</th>
+        <th>{{ 'athlete.birthday'|trans }}</th>
+        <th>{{ 'athlete.photo'|trans }}</th>
+        <th>{{ 'athlete.discipline'|trans }}</th>
+        <th>{{ 'athlete.pays'|trans }}</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        {% for athlete in athletes %}
+          <tr>
+            <td>{{athlete.nom}}</td>
+            <td>{{athlete.prenom}}</td>
+            <td>{{athlete.dateNaissance|date('d/m/Y')}}</td>
+            <td><img src="{{ asset('/uploads/athletes/'~athlete.photo) }}" alt="" class="img-thumbnail"></td>
+            <td>{{athlete.discipline.nom}}</td>
+            <td><img src="{{ asset('/uploads/drapeaux/'~athlete.pays.drapeau) }}" alt="" class="img-thumbnail"></td>
+            <td>
+              <a href="{{ path('athlete_edit', {'id': athlete.id}) }}"><i class="material-icons">mode_edit</i></a>
+            </td>
+            <td>
+              <a href="{{ path('athlete_delete', {'id': athlete.id}) }}"><i class="material-icons text-danger">delete</i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+  <h2>{{ 'athlete.add'|trans }}</h2>
+  {{form_start(form)}}
+  {{form_end(form)}}
+
+{% endblock %}

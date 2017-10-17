@@ -1,0 +1,8 @@
+yoann:
+    resource: "@YoannBundle/Controller/"
+    type:     annotation
+    prefix:   /yoann/{_locale}
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
